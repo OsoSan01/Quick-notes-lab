@@ -9,8 +9,12 @@ import * as notesAPI from './notes-api';
 //   }
 
 export async function createNote(newNote) {
-    return notesAPI.createNote(newNote)  
+    return await notesAPI.createNote(newNote)  
 };
+
+export async function searchNotes() {
+    return await notesAPI.searchNotes();
+}
 
 // export async function deleteNote() {
 //     // Delegate the AJAX request to the notes-api.js

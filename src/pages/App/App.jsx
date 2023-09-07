@@ -12,11 +12,7 @@ import LoginForm from '../../components/LogInForm/LoginForm';
 export default function App() {
   const [user, setUser] = useState(getUser());
 
-const [notes, setNotes] = useState([
-  {text: '1'},
-  {text: 'T2'},
-  {text: '3'}
-  ])
+  const [notes, setNotes] = useState([])
 
   return (
     <main className="App">
@@ -25,7 +21,7 @@ const [notes, setNotes] = useState([
         <NavBar user={user} setUser={setUser} />
         <Routes>
           <Route path="/notes/new" element={<NewNotePage notes={notes} setNotes={setNotes} />} />
-          <Route path="/notes" element={<NoteListPage notes={notes}/>} />
+          <Route path="/notes" element={<NoteListPage user={user} notes={notes} setNotes={setNotes}/>} />
           <Route path="/" />
         </Routes>
       </>
